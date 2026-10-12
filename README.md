@@ -2,7 +2,7 @@
 
 A ReactJS web application for registering for a college tech fest. It demonstrates client-side form validation and an interactive user experience.
 
-**Live demo:** https://YOUR-USERNAME.github.io/techfest-registration/
+**Live demo:** https://SwaraliNasikkar.github.io/techfest-registration/
 
 ## Features
 - Registration form with name, email, mobile number, event, tickets, promo code and rules checkbox
