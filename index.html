@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TechFest Pune – Event Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#16202b;--mute:#5d6b7a;--line:#d9d6cc;--acc:#0f766e;--acc-ink:#fff;--stub:#f2b134;--err:#b42318;--errbg:#fdecea;--ok:#146c43;--okbg:#e4f4ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10171e;--card:#18222c;--ink:#eef1f4;--mute:#9aa7b4;--line:#2c3a47;--acc:#2dd4bf;--acc-ink:#06201c;--stub:#e0a02a;--err:#ff8a7a;--errbg:#3a1d1a;--ok:#6ee7a0;--okbg:#14301f}}
+:root[data-theme="dark"]{--bg:#10171e;--card:#18222c;--ink:#eef1f4;--mute:#9aa7b4;--line:#2c3a47;--acc:#2dd4bf;--acc-ink:#06201c;--stub:#e0a02a;--err:#ff8a7a;--errbg:#3a1d1a;--ok:#6ee7a0;--okbg:#14301f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Public Sans",system-ui,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 48px}
+h1,h2{font-family:"Bricolage Grotesque","Public Sans",sans-serif;margin:0}
+h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.lead{color:var(--mute);max-width:52ch;margin:10px 0 24px}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.row{grid-template-columns:1fr}}
+.field{margin-bottom:16px}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:5px}
+input[type=text],input[type=email],input[type=tel],select{width:100%;padding:11px 12px;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px}
+input:focus,select:focus,button:focus-visible{outline:3px solid color-mix(in srgb,var(--acc) 45%,transparent);outline-offset:1px;border-color:var(--acc)}
+.invalid{border-color:var(--err)!important}
+.valid{border-color:var(--ok)!important}
+.msg{font-size:.85rem;margin-top:5px;min-height:1.2em}
+.msg.e{color:var(--err);font-weight:500}.msg.h{color:var(--mute)}.msg.g{color:var(--ok);font-weight:500}
+.stepper{display:flex;align-items:center;gap:10px}
+.stepper button{width:40px;height:40px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.stepper output{min-width:2ch;text-align:center;font-weight:600;font-size:1.1rem}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.92rem}
+.check input{margin-top:4px;width:18px;height:18px;accent-color:var(--acc)}
+.btn{background:var(--acc);color:var(--acc-ink);border:0;border-radius:8px;padding:13px 18px;font:600 1rem "Public Sans",sans-serif;cursor:pointer;width:100%}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);width:auto;padding:8px 12px;font-size:.88rem}
+.banner{border-radius:8px;padding:12px 14px;margin-bottom:16px;font-size:.92rem}
+.banner.e{background:var(--errbg);color:var(--err)}.banner.g{background:var(--okbg);color:var(--ok)}
+.banner ul{margin:6px 0 0;padding-left:18px}
+.ticket{display:flex;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card);margin-bottom:16px}
+.ticket .main{flex:1;padding:16px 18px;min-width:0}
+.ticket .stub{width:96px;background:var(--stub);color:#16202b;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-left:2px dashed var(--bg);padding:8px}
+.stub b{font:800 1.9rem "Bricolage Grotesque",sans-serif;line-height:1}
+.stub small{font-size:.72rem}
+.ticket h2{font-size:1.2rem;word-break:break-word}
+.ticket p{margin:3px 0;color:var(--mute);font-size:.9rem;word-break:break-word}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.total strong{font:800 1.6rem "Bricolage Grotesque",sans-serif}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.list li:last-child{border:0}
+.empty{color:var(--mute);font-size:.92rem}
+h2.sec{font-size:1.1rem;margin-bottom:12px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<script>
+const { useState, useRef } = React;
+const html = htm.bind(React.createElement);
+
+const EVENTS = {
+  "":            { name: "Select an event", price: 0 },
+  hack:          { name: "24-hour Hackathon", price: 300 },
+  ai:            { name: "AI & ML Workshop", price: 500 },
+  robo:          { name: "Robo Race", price: 250 },
+  talk:          { name: "Startup Talk Series", price: 150 }
+};
+const PROMOS = { STUDENT10: 10, EARLY20: 20 };
+
+// ---- Validation: one pure function returns an error message or "" ----
+function validateField(name, v) {
+  switch (name) {
+    case "name": {
+      const s = v.trim();
+      if (!s) return "Full name is required.";
+      if (s.length < 3) return "Name must be at least 3 characters.";
+      if (!/^[A-Za-z][A-Za-z .'-]*$/.test(s)) return "Use letters only. Numbers and symbols aren't allowed.";
+      if (s.length > 50) return "Name must be 50 characters or fewer.";
+      return "";
+    }
+    case "email":
+      if (!v.trim()) return "Email address is required.";
+      if (!/^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(v.trim())) return "Enter a valid email, like name@college.edu.";
+      return "";
+    case "phone":
+      if (!v.trim()) return "Mobile number is required.";
+      if (!/^\d+$/.test(v)) return "Mobile number must contain digits only.";
+      if (v.length !== 10) return "Mobile number must be exactly 10 digits (you entered " + v.length + ").";
+      if (!/^[6-9]/.test(v)) return "Indian mobile numbers start with 6, 7, 8 or 9.";
+      return "";
+    case "event":
+      return v ? "" : "Choose the event you want to attend.";
+    case "tickets":
+      return v >= 1 && v <= 5 ? "" : "You can book between 1 and 5 tickets.";
+    case "promo":
+      if (!v.trim()) return "";
+      return PROMOS[v.trim().toUpperCase()] ? "" : "That promo code isn't valid. Try STUDENT10 or EARLY20.";
+    case "terms":
+      return v ? "" : "Accept the rules to complete your registration.";
+    default: return "";
+  }
+}
+const LABELS = { name: "Full name", email: "Email", phone: "Mobile number", event: "Event", tickets: "Tickets", promo: "Promo code", terms: "Rules" };
+const INITIAL = { name: "", email: "", phone: "", event: "", tickets: 1, promo: "", terms: false };
+
+function Field({ id, label, error, ok, hint, children }) {
+  return html`<div class="field">
+    <label for=${id}>${label}</label>
+    ${children}
+    <div class=${"msg " + (error ? "e" : ok ? "g" : "h")} id=${id + "-msg"} role=${error ? "alert" : undefined}>
+      ${error || (ok ? "Looks good." : hint || "")}
+    </div>
+  </div>`;
+}
+
+function App() {
+  const [values, setValues] = useState(INITIAL);
+  const [touched, setTouched] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [confirmation, setConfirmation] = useState(null);
+  const [regs, setRegs] = useState([]);
+  const [theme, setTheme] = useState(null);
+  const formRef = useRef(null);
+
+  const errors = {};
+  Object.keys(INITIAL).forEach(k => { errors[k] = validateField(k, values[k]); });
+  const show = k => (touched[k] || submitted) && errors[k];
+  const good = k => touched[k] && !errors[k] && (k !== "promo" || values.promo.trim());
+  const errorKeys = Object.keys(errors).filter(k => errors[k]);
+
+  const set = (k, v) => { setValues(s => ({ ...s, [k]: v })); setConfirmation(null); };
+  const blur = k => setTouched(t => ({ ...t, [k]: true }));
+  const cls = k => (show(k) ? "invalid" : good(k) ? "valid" : "");
+
+  const ev = EVENTS[values.event];
+  const discount = PROMOS[values.promo.trim().toUpperCase()] || 0;
+  const subtotal = ev.price * values.tickets;
+  const total = Math.round(subtotal * (100 - discount) / 100);
+
+  function onSubmit(e) {
+    e.preventDefault();
+    setSubmitted(true);
+    if (errorKeys.length) {
+      const first = formRef.current.querySelector("[aria-invalid=true]");
+      if (first) first.focus();
+      return;
+    }
+    const reg = { id: "TF" + String(1000 + regs.length * 7 + 1), name: values.name.trim(), email: values.email.trim(),
+      event: ev.name, tickets: values.tickets, total };
+    setRegs(r => [reg, ...r]);
+    setConfirmation(reg);
+    setValues(INITIAL); setTouched({}); setSubmitted(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  const toggleTheme = () => {
+    const dark = theme ? theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    const next = dark ? "light" : "dark";
+    setTheme(next); document.documentElement.setAttribute("data-theme", next);
+  };
+
+  return html`<div class="wrap">
+    <div style=${{ display: "flex", justifyContent: "space-between", alignItems: "start", gap: 12 }}>
+      <h1>TechFest Pune<br/>registration desk</h1>
+      <button class="btn ghost" type="button" onClick=${toggleTheme} aria-label="Toggle light or dark theme">Theme</button>
+    </div>
+    <p class="lead">Pick an event, fill in your details and watch your ticket update as you type. Every field is checked before anything is submitted.</p>
+
+    ${confirmation && html`<div class="banner g" role="status">
+      <strong>Registration confirmed.</strong> ${confirmation.name}, your booking ${confirmation.id} for ${confirmation.tickets} × ${confirmation.event} is saved. A receipt of ₹${confirmation.total} will be sent to ${confirmation.email}.
+    </div>`}
+
+    <div class="grid">
+      <form class="card" ref=${formRef} onSubmit=${onSubmit} noValidate>
+        ${submitted && errorKeys.length > 0 && html`<div class="banner e" role="alert">
+          Fix ${errorKeys.length} ${errorKeys.length === 1 ? "problem" : "problems"} before registering:
+          <ul>${errorKeys.map(k => html`<li key=${k}>${LABELS[k]}</li>`)}</ul></div>`}
+
+        <${Field} id="name" label="Full name" error=${show("name")} ok=${good("name")} hint="As it should appear on your ticket.">
+          <input id="name" type="text" value=${values.name} class=${cls("name")} autocomplete="name"
+            aria-invalid=${!!show("name")} aria-describedby="name-msg"
+            onInput=${e => set("name", e.target.value)} onBlur=${() => blur("name")} />
+        <//>
+        <div class="row">
+          <${Field} id="email" label="Email" error=${show("email")} ok=${good("email")} hint="We send your receipt here.">
+            <input id="email" type="email" value=${values.email} class=${cls("email")} autocomplete="email"
+              aria-invalid=${!!show("email")} aria-describedby="email-msg"
+              onInput=${e => set("email", e.target.value)} onBlur=${() => blur("email")} />
+          <//>
+          <${Field} id="phone" label="Mobile number" error=${show("phone")} ok=${good("phone")} hint=${values.phone.length + "/10 digits"}>
+            <input id="phone" type="tel" inputmode="numeric" value=${values.phone} class=${cls("phone")} autocomplete="tel"
+              aria-invalid=${!!show("phone")} aria-describedby="phone-msg"
+              onInput=${e => set("phone", e.target.value.replace(/\s/g, ""))} onBlur=${() => blur("phone")} />
+          <//>
+        </div>
+        <${Field} id="event" label="Event" error=${show("event")} ok=${good("event")} hint="Prices are per ticket.">
+          <select id="event" value=${values.event} class=${cls("event")} aria-invalid=${!!show("event")} aria-describedby="event-msg"
+            onChange=${e => { set("event", e.target.value); blur("event"); }} onBlur=${() => blur("event")}>
+            ${Object.entries(EVENTS).map(([k, o]) => html`<option key=${k} value=${k}>${k ? o.name + " – ₹" + o.price : o.name}</option>`)}
+          </select>
+        <//>
+        <div class="row">
+          <${Field} id="tickets" label="Tickets (max 5)" error=${show("tickets")} ok=${false}>
+            <div class="stepper" id="tickets">
+              <button type="button" aria-label="Remove one ticket" onClick=${() => { set("tickets", Math.max(0, values.tickets - 1)); blur("tickets"); }}>−</button>
+              <output aria-live="polite">${values.tickets}</output>
+              <button type="button" aria-label="Add one ticket" onClick=${() => { set("tickets", Math.min(6, values.tickets + 1)); blur("tickets"); }}>+</button>
+            </div>
+          <//>
+          <${Field} id="promo" label="Promo code (optional)" error=${show("promo")} ok=${good("promo")}
+            hint="Try STUDENT10 or EARLY20.">
+            <input id="promo" type="text" value=${values.promo} class=${cls("promo")} autocapitalize="characters"
+              aria-invalid=${!!show("promo")} aria-describedby="promo-msg"
+              onInput=${e => set("promo", e.target.value)} onBlur=${() => blur("promo")} />
+          <//>
+        </div>
+        <div class="field">
+          <label class="check">
+            <input type="checkbox" checked=${values.terms} aria-invalid=${!!show("terms")}
+              onChange=${e => { set("terms", e.target.checked); blur("terms"); }} />
+            <span>I agree to carry a valid college ID and follow the event rules.</span>
+          </label>
+          <div class=${"msg " + (show("terms") ? "e" : "h")} role=${show("terms") ? "alert" : undefined}>${show("terms") || ""}</div>
+        </div>
+        <button class="btn" type="submit">Confirm registration</button>
+      </form>
+
+      <div>
+        <div class="ticket" aria-label="Live ticket preview">
+          <div class="main">
+            <h2>${values.event ? ev.name : "Your event"}</h2>
+            <p>${values.name.trim() || "Attendee name"}</p>
+            <p>${discount ? "Promo applied: " + discount + "% off" : "No promo applied"}</p>
+          </div>
+          <div class="stub"><b>${values.tickets}</b><small>${values.tickets === 1 ? "ticket" : "tickets"}</small></div>
+        </div>
+        <div class="card">
+          <div class="total"><span>Total to pay</span><strong>₹${total}</strong></div>
+          ${discount > 0 && subtotal > 0 && html`<p class="msg g">You save ₹${subtotal - total}.</p>`}
+        </div>
+        <div class="card" style=${{ marginTop: 16 }}>
+          <h2 class="sec">Registrations (${regs.length})</h2>
+          ${regs.length === 0
+            ? html`<p class="empty">Nothing booked yet. Complete the form to see your first registration here.</p>`
+            : html`<ul class="list">${regs.map(r => html`<li key=${r.id}>
+                <span><strong>${r.id}</strong> · ${r.name}<br/><span class="empty">${r.tickets} × ${r.event} · ₹${r.total}</span></span>
+                <button class="btn ghost" type="button" onClick=${() => setRegs(x => x.filter(y => y.id !== r.id))}>Cancel</button>
+              </li>`)}</ul>`}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(html`<${App} />`);
+</script>
+</body>
+</html>
